@@ -64,7 +64,8 @@ public class Main extends JPanel{
 				if(e.getButton() == MouseEvent.BUTTON1) {
 					int mouseY = MouseInfo.getPointerInfo().getLocation().y;
 			        int mouseX = MouseInfo.getPointerInfo().getLocation().x;
-		            t.setTileColor(Color.BLACK, mouseX, mouseY);
+		            t.setTile(mouseX, mouseY);
+		            t.repaint();
 		          }
 				
 			}
