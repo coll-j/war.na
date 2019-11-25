@@ -2,6 +2,8 @@ package id.war.na;
 
 import java.awt.Cursor;
 import java.awt.Rectangle;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -13,6 +15,7 @@ import javax.swing.SwingUtilities;
 public class Game extends JFrame{
 	
 	private Tile tile;
+	private int cheat_key = 0;
 	ImageIcon icon = new ImageIcon("src/rsrc/icon_31.png");
 	
 	Object[] options = {"New War", "Quit"};
@@ -38,6 +41,7 @@ public class Game extends JFrame{
 		newGame();
 		
 		addMouseListener(new MouseHandler());
+		addKeyListener(new KeyHandler());
 	}
 	
 	public void newGame()
@@ -82,5 +86,25 @@ public class Game extends JFrame{
 				}
 	          }
 		}
+	}
+	private class KeyHandler implements KeyListener
+	{
+		public void keyPressed(KeyEvent e) {
+			int key = e.getKeyCode();
+			if (key == KeyEvent.VK_W)
+			{
+				cheat_key++;
+				if(cheat_key >= 5)
+				{
+					cheat_key = 0;
+					tile.cheat();
+				}
+			}
+		}
+		public void keyReleased(KeyEvent e) {}
+		public void keyTyped(KeyEvent e) {
+			
+		}
+		
 	}
 }

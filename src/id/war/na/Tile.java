@@ -46,7 +46,6 @@ public class Tile extends JPanel{
 				well[i][j] = color_lib[r.nextInt(color_lib.length)];
 			}
 		}
-		well[0][0] = Color.YELLOW;
 		
 		wheel.clear();
 		for(int i = 0; i < 6; i++)
@@ -153,5 +152,23 @@ public class Tile extends JPanel{
 			}
 		}
 		return true;
+	}
+	
+	public void cheat()
+	{
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++) {
+				well[i][j] = Color.RED;
+			}
+		}
+		well[0][0] = Color.YELLOW;
+		
+		wheel.clear();
+		for(int i = 0; i < 6; i++)
+		{
+			wheel.add(Color.RED);
+		}
+		
+		repaint();
 	}
 }
