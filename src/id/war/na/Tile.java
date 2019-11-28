@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.Graphics;
 import java.awt.MouseInfo;
+import java.awt.Rectangle;
 
 import javax.swing.JPanel;
 
@@ -33,7 +34,11 @@ public class Tile extends JPanel{
 		window_h = height;
 	}
 	
-	public void init() {
+	public Tile(Rectangle r)
+	{
+		window_w = r.width;
+		window_h = r.height;
+		
 		box_size = (int) 30 * window_w / 1024;
 		mainX = (int) (window_w/2) - ((box_size + 1) * 5);
 		mainY = (int) 70 * window_h / 600;
@@ -41,6 +46,9 @@ public class Tile extends JPanel{
 		wheelY = (int) 450 * window_h / 600;
 		
 		well = new Color[10][10];
+	}
+	
+	public void init() {
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
 				well[i][j] = color_lib[r.nextInt(color_lib.length)];
@@ -95,7 +103,7 @@ public class Tile extends JPanel{
 	{
 		int x_index = (int) (x - mainX)/(box_size + 1);
 		int y_index = (int) ((y - mainY)/(box_size + 1));
-		
+		System.out.println(x_index + " " + y_index);
 		if (x_index < 0 || x_index > 9 || y_index < 0 || y_index > 9)
 			return;
 		Color c = wheel.get(0);
@@ -136,6 +144,7 @@ public class Tile extends JPanel{
 	{
 		int mouseY = MouseInfo.getPointerInfo().getLocation().y;
         int mouseX = MouseInfo.getPointerInfo().getLocation().x;
+        System.out.println(mouseX + " " + mouseY);
         setTile(mouseX, mouseY);
 	}
 	
