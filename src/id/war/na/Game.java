@@ -38,6 +38,7 @@ public class Game extends JFrame{
 		
 		Rectangle r = getBounds();
 		tile = new Tile(r.width, r.height);
+		//System.out.println("" + r.width + " " + r.height);
 		newGame();
 		
 		addMouseListener(new MouseHandler());
