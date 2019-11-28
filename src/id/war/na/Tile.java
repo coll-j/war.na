@@ -35,7 +35,6 @@ public class Tile extends JPanel{
 	
 	public void init() {
 		box_size = (int) 30 * window_w / 1024;
-		//System.out.println("" + window_w + " " + window_h);
 		mainX = (int) (window_w/2) - ((box_size + 1) * 5);
 		mainY = (int) 70 * window_h / 600;
 		wheelX = (int) (window_w/2) - ((box_size + 1) * 3);
