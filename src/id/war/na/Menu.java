@@ -26,13 +26,14 @@ public class Menu extends JPanel {
 	public Menu(Screen frame)
 	{
 		JLabel bg;
-		JButton button;
+		JButton play, howtoplay, quit;
 		
 		ImageIcon img = new ImageIcon("src/rsrc/warna_TITLE.jpg");
 		Image imgt = img.getImage();
 //		setLayout(new GridBagLayout());		
 		
 		f = frame;
+		frame.setLayout(new BorderLayout());
 		Rectangle r = frame.getBounds();
 		imgt = imgt.getScaledInstance(r.width, r.height, Image.SCALE_DEFAULT);
 		
@@ -42,18 +43,46 @@ public class Menu extends JPanel {
 		
 
         GridBagConstraints gbc = new GridBagConstraints();
-//        gbc.gridwidth = GridBagConstraints.REMAINDER;
+//        gbc.gridwidth = GridBagConstraints.VERTICAL;
 //        gbc.anchor = GridBagConstraints.CENTER;
-//        gbc.fill = GridBagConstraints.HORIZONTAL;
 //        gbc.anchor = GridBagConstraints.PAGE_END;
-//        gbc.weighty = 0.1;
-//        gbc.gridy = 2;
+//        gbc.weighty = 1;
 
-        button = new JButton("play");
-        bg.add(button, gbc);
+
+        play = addAButton("src/rsrc/button_default/PLAY.png");
+        play.setBorderPainted(false);
+        play.setContentAreaFilled(false);
+        
+        howtoplay = addAButton("src/rsrc/button_default/HOW TO PLAY.png");
+        howtoplay.setBorderPainted(false);
+        howtoplay.setContentAreaFilled(false);
+        
+        quit = addAButton("src/rsrc/button_default/QUIT.png");
+        quit.setBorderPainted(false);
+        quit.setContentAreaFilled(false); 
+        
+        //button = new JButton("play");
+//        gbc.insets(4,0,0,0);
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        bg.add(play, gbc);
+        
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        bg.add(howtoplay, gbc);
+        
+        gbc.gridx = 0;
+        gbc.gridy = 4;
+        bg.add(quit, gbc);
         
 		add(bg);
-		button.addActionListener(new ButtonHandler());
+		ButtonHandler buttoh = new ButtonHandler();
+		play.addActionListener(buttoh);
+	}
+	
+	private JButton addAButton (String url) {
+		JButton button = new JButton(new ImageIcon(url));
+		return button;
 	}
 	
 	private class ButtonHandler implements ActionListener 
