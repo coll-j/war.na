@@ -12,10 +12,17 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Tile extends JPanel{
-
+	private static final Color CREAM1 = new Color(255, 254, 228);	
+	private static final Color YELLOW1 = new Color(255, 232, 156);
+	private static final Color RED1 = new Color(235, 162, 150);
+	private static final Color MAGENTA1 = new Color(209, 164, 255);
+	private static final Color BLUE1 = new Color(160, 219, 235);
+	private static final Color GREEN1 = new Color(194, 255, 181);
+	private static final Color BLACK1 = new Color(40, 40, 40);
+	
 	private Color[][] well;
 	private ArrayList<Color> wheel = new ArrayList<Color>();
-	private final Color[] color_lib = {Color.BLUE, Color.GREEN, Color.RED, Color.YELLOW, Color.MAGENTA};
+	private final Color[] color_lib = {BLUE1, GREEN1, RED1, YELLOW1, MAGENTA1};
 	private Random r = new Random();
 	
 	private int window_w = 1024;
@@ -66,7 +73,8 @@ public class Tile extends JPanel{
 	
 	public void paintComponent(Graphics g)
 	{
-		g.setColor(new Color(224,224,224));
+	//	g.setColor(new Color(224,224,224));
+		g.setColor(CREAM1);
 		g.fillRect(0, 0, window_w, window_h);
 
 		// Paint the tiles
@@ -78,7 +86,7 @@ public class Tile extends JPanel{
 		}
 		
 		// Paint the color wheel
-		g.setColor(Color.BLACK);
+		g.setColor(BLACK1);
 		g.fillRect(wheelX, wheelY - 2, ((box_size + 1) * 5) + (box_size + 12), (box_size + 4));
 		int count = -1;
 		for(Color c : wheel)
@@ -86,7 +94,7 @@ public class Tile extends JPanel{
 			g.setColor(c);
 			if(count < 0)
 			{
-				g.setColor(Color.BLACK);
+				g.setColor(BLACK1);
 				g.fillRect(wheelX - 3, wheelY - 5, (box_size + 14), (box_size + 14));
 				g.setColor(c);
 				g.fillRect(wheelX - 1, wheelY - 3, (box_size + 10), (box_size + 10));
@@ -167,15 +175,15 @@ public class Tile extends JPanel{
 	{
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
-				well[i][j] = Color.RED;
+				well[i][j] = RED1;
 			}
 		}
-		well[0][0] = Color.YELLOW;
+		well[0][0] = YELLOW1;
 		
 		wheel.clear();
 		for(int i = 0; i < 6; i++)
 		{
-			wheel.add(Color.RED);
+			wheel.add(RED1);
 		}
 		
 		repaint();
