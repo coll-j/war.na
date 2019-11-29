@@ -107,9 +107,11 @@ public class Game extends JPanel{
 	{
 		public void keyPressed(KeyEvent e) {
 			int key = e.getKeyCode();
+			System.out.println("wwwwx");
 			if (key == KeyEvent.VK_W)
 			{
 				cheat_key++;
+				System.out.println("wwwww");
 				if(cheat_key >= 5)
 				{
 					cheat_key = 0;
@@ -130,7 +132,7 @@ public class Game extends JPanel{
 	      @Override
 	      public void actionPerformed(ActionEvent event)
 	      {
-	         System.out.println("go to game");
+	         System.out.println("go to menu");
 	         f.layout.show(f.panel, "menu");
 	      }
 	   } 

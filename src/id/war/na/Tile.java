@@ -110,7 +110,8 @@ public class Tile extends JPanel{
 		wheel.remove(0);
 		wheel.add(color_lib[r.nextInt(color_lib.length)]);
 
-		floodFill(x_index, y_index, well[x_index][y_index], c);
+		if(!(c.equals(well[x_index][y_index])))
+			floodFill(x_index, y_index, well[x_index][y_index], c);
 		repaint();
 	}
 	
