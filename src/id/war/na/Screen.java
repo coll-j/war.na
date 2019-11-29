@@ -1,6 +1,8 @@
 package id.war.na;
 
 import java.awt.CardLayout;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -35,5 +37,26 @@ public class Screen extends JFrame{
 		add(panel);
 
 		SwingUtilities.updateComponentTreeUI(this);
+		
+		addKeyListener(new KeyHandler());
+		setFocusable(true);
+	}
+	
+	private class KeyHandler implements KeyListener
+	{
+		public void keyPressed(KeyEvent e) {
+			int key = e.getKeyCode();
+			System.out.println("wwwwx");
+			if (key == KeyEvent.VK_W)
+			{
+				System.out.println("wwwww");
+				game.cheatCount();
+			}
+		}
+		public void keyReleased(KeyEvent e) {}
+		public void keyTyped(KeyEvent e) {
+			
+		}
+		
 	}
 }
