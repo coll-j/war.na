@@ -8,7 +8,7 @@
 - Zakiya Azizah Cahyaningtyas (05111840000080)
 ```
 
-- War /wôr/ (in Bahasa: Perang):
+- War (in Bahasa: Perang):
   *noun*
   - a state of conflict between different nations or states or different groups within a nation or state.
   - pertempuran besar antara dua pasukan atau lebih.
