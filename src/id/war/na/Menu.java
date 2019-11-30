@@ -52,10 +52,16 @@ public class Menu extends JPanel {
 
 
         play = addAButton("play","src/rsrc/button_default/PLAY.png");
+        play.setRolloverIcon(new ImageIcon("src/rsrc/button_highlighted/PLAY.png"));
+        play.setPressedIcon(new ImageIcon("src/rsrc/button_pressed/PLAY.png"));
         
         howtoplay = addAButton("howtoplay","src/rsrc/button_default/HOW TO PLAY.png");
+        howtoplay.setRolloverIcon(new ImageIcon("src/rsrc/button_highlighted/HOW TO PLAY.png"));
+        howtoplay.setPressedIcon(new ImageIcon("src/rsrc/button_pressed/HOW TO PLAY.png"));
         
         quit = addAButton("quit","src/rsrc/button_default/QUIT.png");
+        quit.setRolloverIcon(new ImageIcon("src/rsrc/button_highlighted/QUIT.png"));
+        quit.setPressedIcon(new ImageIcon("src/rsrc/button_pressed/QUIT.png"));
         
         gbc.insets = new Insets(150, 0, 0, 0);
         gbc.gridx = 0;
@@ -84,47 +90,8 @@ public class Menu extends JPanel {
 		ButtonHandler buttoh = new ButtonHandler();
 		button.addActionListener(buttoh);
 		
-		MouseHandler mouseh = new MouseHandler();
-		button.addMouseListener(mouseh);
-		
-		
 		return button;
 	}
-	
-	private class MouseHandler implements MouseListener{
-
-		@Override
-		public void mouseClicked(MouseEvent e) {
-			
-			
-		}
-
-		@Override
-		public void mouseEntered(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mouseExited(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mousePressed(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mouseReleased(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-		
-	}
-
 	
 	private class ButtonHandler implements ActionListener 
 	   {
