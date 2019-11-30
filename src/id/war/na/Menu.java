@@ -63,12 +63,12 @@ public class Menu extends JPanel {
         quit.setRolloverIcon(new ImageIcon("src/rsrc/button_highlighted/QUIT.png"));
         quit.setPressedIcon(new ImageIcon("src/rsrc/button_pressed/QUIT.png"));
         
-        gbc.insets = new Insets(150, 0, 0, 0);
+        gbc.insets = new Insets(200, 0, 0, 0);
         gbc.gridx = 0;
         gbc.gridy = 2;
         bg.add(play, gbc);
         
-        gbc.insets = new Insets(20, 0, 0, 0);
+        gbc.insets = new Insets(40, 0, 0, 0);
         gbc.gridx = 0;
         gbc.gridy = 3;
         bg.add(howtoplay, gbc);
