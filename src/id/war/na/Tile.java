@@ -32,8 +32,10 @@ public class Tile extends JPanel{
 	private int mainY;
 	private int wheelX;
 	private int wheelY;
-	
 	private int box_size;
+
+	private Color p1;
+	private Color p2;
 	
 	public Tile(int width, int height)
 	{
@@ -67,6 +69,12 @@ public class Tile extends JPanel{
 		{
 			wheel.add(color_lib[r.nextInt(color_lib.length)]);
 		}
+		
+		p1 = color_lib[r.nextInt(color_lib.length)];
+		p2 = color_lib[r.nextInt(color_lib.length)];
+		while(p2.equals(p1))
+			p2 = color_lib[r.nextInt(color_lib.length)];
+		System.out.println(p1 + " " + p2);
 		
 		repaint();
 	}
@@ -157,7 +165,7 @@ public class Tile extends JPanel{
         setTile(mouseX, mouseY);
 	}
 	
-	public boolean allSame()
+	private boolean allSame()
 	{
 		for(int i = 0; i < 10; i++)
 		{
@@ -188,5 +196,18 @@ public class Tile extends JPanel{
 		}
 		
 		repaint();
+	}
+
+	public int getWinner()
+	{
+		if(allSame())
+		{
+			if(well[0][0].equals(p1))
+				return 1;
+			else if(well[0][0].equals(p2))
+				return 2;
+		}
+		
+		return 0;
 	}
 }

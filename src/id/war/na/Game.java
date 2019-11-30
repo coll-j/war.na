@@ -1,6 +1,7 @@
 package id.war.na;
 
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -21,6 +22,8 @@ public class Game extends JPanel{
 	private Tile tile;
 	private int cheat_key = 0;
 	private Rectangle bound;
+	
+	
 	
 	ImageIcon icon = new ImageIcon("src/rsrc/icon_31.png");
 	
@@ -75,12 +78,8 @@ public class Game extends JPanel{
 		if(tile.isVisible()) remove(tile);
 		tile.init();
 		add(tile);
+		
 		SwingUtilities.updateComponentTreeUI(this);
-	}
-
-	public boolean isPlaying()
-	{
-		return !(tile.allSame());
 	}
 	
 	private class MouseHandler implements MouseListener
@@ -98,14 +97,14 @@ public class Game extends JPanel{
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			if(e.getButton() == MouseEvent.BUTTON1) {
-				if(isPlaying())
+				if(tile.getWinner() == 0)
 				{
 					System.out.println("thay");
 					tile.mouseClicked(e);
-					if(!(isPlaying()))
+					if(tile.getWinner() != 0)
 					{
 						int n = JOptionPane.showOptionDialog(Game.this, 
-								"You won the War of Warna", "Congratulations!", 
+								String.format("Player %d won the War of Warna!", tile.getWinner()), "Congratulations!", 
 								JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, icon, options, options[1]);
 						if(n == 0) newGame();
 						else f.dispose();
