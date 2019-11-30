@@ -118,9 +118,10 @@ public class Tile extends JPanel{
 	{
 		int x_index = (int) (x - mainX)/(box_size + 1);
 		int y_index = (int) ((y - mainY)/(box_size + 1));
-		System.out.println(x_index + " " + y_index);
+
 		if (x_index < 0 || x_index > 9 || y_index < 0 || y_index > 9)
 			return;
+		
 		Color c = wheel.get(0);
 		wheel.remove(0);
 		wheel.add(color_lib[r.nextInt(color_lib.length)]);
@@ -160,7 +161,6 @@ public class Tile extends JPanel{
 	{
 		int mouseY = MouseInfo.getPointerInfo().getLocation().y;
         int mouseX = MouseInfo.getPointerInfo().getLocation().x;
-        System.out.println(mouseX + " " + mouseY);
         setTile(mouseX, mouseY);
 	}
 	
