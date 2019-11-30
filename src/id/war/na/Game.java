@@ -23,8 +23,6 @@ public class Game extends JPanel{
 	private int cheat_key = 0;
 	private Rectangle bound;
 	
-	
-	
 	ImageIcon icon = new ImageIcon("src/rsrc/icon_31.png");
 	
 	Screen f;
@@ -99,7 +97,6 @@ public class Game extends JPanel{
 			if(e.getButton() == MouseEvent.BUTTON1) {
 				if(tile.getWinner() == 0)
 				{
-					System.out.println("thay");
 					tile.mouseClicked(e);
 					if(tile.getWinner() != 0)
 					{

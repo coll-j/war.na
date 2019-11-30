@@ -30,7 +30,6 @@ public class Menu extends JPanel {
 		
 		ImageIcon img = new ImageIcon("src/rsrc/warna_TITLE.jpg");
 		Image imgt = img.getImage();
-//		setLayout(new GridBagLayout());		
 		
 		f = frame;
 		frame.setLayout(new BorderLayout());
@@ -38,16 +37,10 @@ public class Menu extends JPanel {
 		imgt = imgt.getScaledInstance(r.width, r.height, Image.SCALE_DEFAULT);
 		
 		bg = new JLabel("", new ImageIcon(imgt), JLabel.CENTER);
-//		bg = new JLabel();
 		bg.setLayout(new GridBagLayout());
 		
 
         GridBagConstraints gbc = new GridBagConstraints();
-//        gbc.gridwidth = GridBagConstraints.VERTICAL;
-//        gbc.anchor = GridBagConstraints.CENTER;
-//        gbc.anchor = GridBagConstraints.PAGE_END;
-//        gbc.weighty = 1;
-
 
         play = addAButton("src/rsrc/button_default/PLAY.png");
         play.setBorderPainted(false);
@@ -61,8 +54,6 @@ public class Menu extends JPanel {
         quit.setBorderPainted(false);
         quit.setContentAreaFilled(false); 
         
-        //button = new JButton("play");
-//        gbc.insets(4,0,0,0);
         gbc.gridx = 0;
         gbc.gridy = 2;
         bg.add(play, gbc);

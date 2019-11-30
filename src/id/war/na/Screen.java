@@ -46,17 +46,13 @@ public class Screen extends JFrame{
 	{
 		public void keyPressed(KeyEvent e) {
 			int key = e.getKeyCode();
-			System.out.println("wwwwx");
 			if (key == KeyEvent.VK_W)
 			{
-				System.out.println("wwwww");
 				game.cheatCount();
 			}
 		}
 		public void keyReleased(KeyEvent e) {}
-		public void keyTyped(KeyEvent e) {
-			
-		}
+		public void keyTyped(KeyEvent e) {}
 		
 	}
 }

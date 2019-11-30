@@ -81,7 +81,6 @@ public class Tile extends JPanel{
 	
 	public void paintComponent(Graphics g)
 	{
-	//	g.setColor(new Color(224,224,224));
 		g.setColor(CREAM1);
 		g.fillRect(0, 0, window_w, window_h);
 
