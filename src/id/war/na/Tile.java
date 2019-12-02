@@ -38,6 +38,9 @@ public class Tile extends JPanel{
 	private int mainY;
 	private int wheelX;
 	private int wheelY;
+	
+	private int p1count;
+	private int p2count;
 		
 	private int box_size;
 
@@ -87,11 +90,13 @@ public class Tile extends JPanel{
 		
 		turn = 1;
 		
+		tileCount();
+		
 		repaint();
 	}
 	
 	public void paintComponent(Graphics g)
-	{
+	{	
 		g.setColor(CREAM1);
 		g.fillRect(0, 0, window_w, window_h);
 
@@ -158,7 +163,7 @@ public class Tile extends JPanel{
 		// player 1 score
 		g.setColor(p1);
 		g.fillRect(mainX/2 - box_size, window_h/2 + 1*box_size, 2*box_size, 1*box_size + 15);
-		drawCenteredString("123", mainX, window_h/2 + 13*box_size, g, Bebas, CREAM1);
+		drawCenteredString(" " + p1count, mainX, window_h/2 + 13*box_size, g, Bebas, CREAM1);
 		
 		// player 2 components
 		drawCenteredString("Player   2", window_w + 2*mainX - 2*box_size, window_h/2 - 2*box_size, g, BebasTitle, BLACK1);
@@ -174,7 +179,7 @@ public class Tile extends JPanel{
 		// player 2 score
 		g.setColor(p2);
 		g.fillRect((window_w - mainX) + (mainX/2 - box_size), window_h/2 + 1*box_size, 2*box_size, 1*box_size + 15);
-		drawCenteredString("134", window_w + 2*mainX - 2*box_size, window_h/2 + 13*box_size, g, Bebas, CREAM1);
+		drawCenteredString(" " + p2count, window_w + 2*mainX - 2*box_size, window_h/2 + 13*box_size, g, Bebas, CREAM1);
 		
 	}
 	
@@ -233,11 +238,27 @@ public class Tile extends JPanel{
 		floodFill(x, y-1, before, target);
 	}
 	
+	private void tileCount() {
+		p1count = 0;
+		p2count = 0;
+		
+		for (int i=0; i<10; i++) {
+			for (int j=0; j<10; j++) {
+				if(well[i][j].equals(p1)) p1count++;
+				else if(well[i][j].equals(p2)) p2count++;
+			}
+		}
+		
+		System.out.println("p1 " + p1count + "p2 " + p2count);
+		
+	}
+	
 	public void mouseClicked(MouseEvent e)
 	{
 		int mouseY = MouseInfo.getPointerInfo().getLocation().y;
         int mouseX = MouseInfo.getPointerInfo().getLocation().x;
         setTile(mouseX, mouseY);
+        tileCount();
 	}
 	
 	private boolean allSame()

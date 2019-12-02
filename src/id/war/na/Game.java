@@ -18,6 +18,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
+import id.war.na.Menu.ButtonHandler;
+//import id.war.na.Menu.addAButton;
+
 public class Game extends JPanel{
 	
 	private Tile tile;
@@ -34,7 +37,13 @@ public class Game extends JPanel{
 	
 	public Game(Screen frame)
 	{
-		JButton button = new JButton("menu");
+		JButton menu = new JButton("menu");
+	//	JButton menu;
+		
+		JButton mena = addAButton("menu","src/rsrc/button_default/MENU.png");
+//        menu.setRolloverIcon(new ImageIcon("src/rsrc/button_highlighted/MENU.png"));
+//        menu.setPressedIcon(new ImageIcon("src/rsrc/button_pressed/MENU.png"));
+        
 		addMouseListener(new MouseHandler());
 		
 		bound = frame.getBounds();
@@ -43,13 +52,14 @@ public class Game extends JPanel{
 		
 		tile.setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
-        gbc.anchor = GridBagConstraints.PAGE_END;
+        gbc.anchor = GridBagConstraints.SOUTH;
         gbc.weighty = 0.1;
         
-        tile.add(button, gbc);
-        button.addActionListener(new ButtonHandler());
+        tile.add(menu, gbc);
+        tile.add(mena, gbc);
+        menu.addActionListener(new ButtonHandler());
 		setLayout(new CardLayout());
-		
+		//menu.setVisible(true);
 		
 		initGame();
 	}
@@ -113,6 +123,19 @@ public class Game extends JPanel{
 				}
 	          }
 		}
+	}
+	
+	private JButton addAButton (String name,String url) {
+		JButton button = new JButton(new ImageIcon(url));
+		
+		button.setBorderPainted(false);
+		button.setContentAreaFilled(false);
+		button.setActionCommand(name);
+		
+		ButtonHandler buttoh = new ButtonHandler();
+		button.addActionListener(buttoh);
+		
+		return button;
 	}
 	
 	private class ButtonHandler implements ActionListener 

@@ -90,7 +90,7 @@ public class Menu extends JPanel {
 		return button;
 	}
 	
-	private class ButtonHandler implements ActionListener 
+	public class ButtonHandler implements ActionListener 
 	   {
 	      // handle button event
 	      @Override
