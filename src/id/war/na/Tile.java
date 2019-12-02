@@ -85,6 +85,8 @@ public class Tile extends JPanel{
 			p2 = color_lib[r.nextInt(color_lib.length)];
 		System.out.println(p1 + " " + p2);
 		
+		turn = 1;
+		
 		repaint();
 	}
 	
