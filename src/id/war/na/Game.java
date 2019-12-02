@@ -1,8 +1,9 @@
 package id.war.na;
 
-import java.awt.BorderLayout;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Rectangle;
@@ -15,7 +16,6 @@ import java.awt.event.MouseListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
@@ -25,6 +25,8 @@ public class Game extends JPanel{
 	private Tile tile;
 	private int cheat_key = 0;
 	private Rectangle bound;
+	Font Bebas = new Font("Bebas", Font.TRUETYPE_FONT, 40);
+	public static final Color CREAM1 = new Color(255, 254, 228);
 	
 	Screen f;
 	
@@ -64,6 +66,7 @@ public class Game extends JPanel{
 		if(tile.isVisible()) remove(tile);
 		tile.init();
 		add(tile);
+
 		SwingUtilities.updateComponentTreeUI(this);
 	}
 
@@ -89,7 +92,7 @@ public class Game extends JPanel{
 			if(e.getButton() == MouseEvent.BUTTON1) {
 				if(isPlaying())
 				{
-					System.out.println("thay");
+					//System.out.println("thay");
 					tile.mouseClicked(e);
 					if(!(isPlaying()))
 					{
@@ -103,6 +106,7 @@ public class Game extends JPanel{
 	          }
 		}
 	}
+	
 	private class KeyHandler implements KeyListener
 	{
 		public void keyPressed(KeyEvent e) {
