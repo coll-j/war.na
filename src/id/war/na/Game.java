@@ -104,7 +104,7 @@ public class Game extends JPanel{
 								String.format("Player %d won the War of Warna!", tile.getWinner()), "Congratulations!", 
 								JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE, icon, options, options[1]);
 						if(n == 0) newGame();
-						else f.dispose();
+						else System.exit(1);;
 					}
 				}
 	          }
