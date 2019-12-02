@@ -3,6 +3,7 @@ package id.war.na;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Rectangle;
@@ -22,6 +23,8 @@ public class Game extends JPanel{
 	private Tile tile;
 	private int cheat_key = 0;
 	private Rectangle bound;
+	Font Bebas = new Font("Bebas", Font.TRUETYPE_FONT, 40);
+	public static final Color CREAM1 = new Color(255, 254, 228);
 	
 	ImageIcon icon = new ImageIcon("src/rsrc/icon_31.png");
 	
@@ -97,6 +100,7 @@ public class Game extends JPanel{
 			if(e.getButton() == MouseEvent.BUTTON1) {
 				if(tile.getWinner() == 0)
 				{
+					//System.out.println("thay");
 					tile.mouseClicked(e);
 					if(tile.getWinner() != 0)
 					{
