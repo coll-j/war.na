@@ -249,7 +249,7 @@ public class Tile extends JPanel{
 			}
 		}
 		
-		System.out.println("p1 " + p1count + "p2 " + p2count);
+//		System.out.println("p1 " + p1count + "p2 " + p2count);
 		
 	}
 	

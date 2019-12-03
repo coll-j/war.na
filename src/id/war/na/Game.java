@@ -144,7 +144,7 @@ public class Game extends JPanel{
 	      @Override
 	      public void actionPerformed(ActionEvent event)
 	      {
-	         System.out.println("go to menu");
+	     //    System.out.println("go to menu");
 	         f.layout.show(f.panel, "menu");
 	      }
 	   } 

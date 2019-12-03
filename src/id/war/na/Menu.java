@@ -99,7 +99,7 @@ public class Menu extends JPanel {
 	    	 String action = event.getActionCommand();
 	    	 
 	         if(action.equals("play")) {
-	        	 System.out.println("go to game");
+	        //	 System.out.println("go to game");
 	        	 f.layout.show(f.panel, "game");
 	         }
 	         else if(action.equals("quit")) {
