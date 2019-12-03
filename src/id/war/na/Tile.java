@@ -152,7 +152,7 @@ public class Tile extends JPanel{
 		// player 1 components
 		drawCenteredString("Player   1", mainX, window_h/2 - 2*box_size, g, BebasTitle, BLACK1);
 		drawCenteredString("target", mainX, window_h/2 + 3*box_size, g, Bebas, BLACK1);
-		drawCenteredString("score", mainX, window_h/2 + 10*box_size, g, Bebas, BLACK1);
+		drawCenteredString("tile count", mainX, window_h/2 + 10*box_size, g, Bebas, BLACK1);
 		
 		// player 1 target color
 		g.setColor(BLACK1);
@@ -168,7 +168,7 @@ public class Tile extends JPanel{
 		// player 2 components
 		drawCenteredString("Player   2", window_w + 2*mainX - 2*box_size, window_h/2 - 2*box_size, g, BebasTitle, BLACK1);
 		drawCenteredString("target", window_w + 2*mainX - 2*box_size, window_h/2 + 3*box_size, g, Bebas, BLACK1);
-		drawCenteredString("score", window_w + 2*mainX - 2*box_size, window_h/2 + 10*box_size, g, Bebas, BLACK1);
+		drawCenteredString("tile count", window_w + 2*mainX - 2*box_size, window_h/2 + 10*box_size, g, Bebas, BLACK1);
 		
 		// player 2 target color
 		g.setColor(BLACK1);
@@ -247,10 +247,7 @@ public class Tile extends JPanel{
 				if(well[i][j].equals(p1)) p1count++;
 				else if(well[i][j].equals(p2)) p2count++;
 			}
-		}
-		
-//		System.out.println("p1 " + p1count + "p2 " + p2count);
-		
+		}		
 	}
 	
 	public void mouseClicked(MouseEvent e)

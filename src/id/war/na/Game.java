@@ -6,6 +6,7 @@ import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,7 +20,6 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 import id.war.na.Menu.ButtonHandler;
-//import id.war.na.Menu.addAButton;
 
 public class Game extends JPanel{
 	
@@ -37,12 +37,9 @@ public class Game extends JPanel{
 	
 	public Game(Screen frame)
 	{
-		JButton menu = new JButton("menu");
-	//	JButton menu;
-		
-		JButton mena = addAButton("menu","src/rsrc/button_default/MENU.png");
-//        menu.setRolloverIcon(new ImageIcon("src/rsrc/button_highlighted/MENU.png"));
-//        menu.setPressedIcon(new ImageIcon("src/rsrc/button_pressed/MENU.png"));
+		JButton menu = addAButton("menu","src/rsrc/button_default/MENU.png");
+        menu.setRolloverIcon(new ImageIcon("src/rsrc/button_highlighted/MENU.png"));
+        menu.setPressedIcon(new ImageIcon("src/rsrc/button_pressed/MENU.png"));
         
 		addMouseListener(new MouseHandler());
 		
@@ -52,14 +49,12 @@ public class Game extends JPanel{
 		
 		tile.setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
-        gbc.anchor = GridBagConstraints.SOUTH;
         gbc.weighty = 0.1;
-        
+        gbc.insets = new Insets(630, 0, 0, 0);
+  
         tile.add(menu, gbc);
-        tile.add(mena, gbc);
         menu.addActionListener(new ButtonHandler());
 		setLayout(new CardLayout());
-		//menu.setVisible(true);
 		
 		initGame();
 	}
@@ -110,7 +105,6 @@ public class Game extends JPanel{
 			if(e.getButton() == MouseEvent.BUTTON1) {
 				if(tile.getWinner() == 0)
 				{
-					//System.out.println("thay");
 					tile.mouseClicked(e);
 					if(tile.getWinner() != 0)
 					{
@@ -144,7 +138,6 @@ public class Game extends JPanel{
 	      @Override
 	      public void actionPerformed(ActionEvent event)
 	      {
-	     //    System.out.println("go to menu");
 	         f.layout.show(f.panel, "menu");
 	      }
 	   } 
