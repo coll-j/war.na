@@ -22,7 +22,7 @@
 - War.Na:
   *noun*
   - an addictive game that brings a concept of war between 2 players to reach their target color
-  - maino ae cik ws mager bikin kalimat aku
+  - main aja langsung, lah!
   
 [logo]: https://github.com/coll-j/war.na/blob/master/src/rsrc/icon_31.png "war.na logo"
 > This game was created in order to complete 
