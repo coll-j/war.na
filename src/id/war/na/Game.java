@@ -6,6 +6,7 @@ import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,6 +18,8 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
+
+import id.war.na.Menu.ButtonHandler;
 
 public class Game extends JPanel{
 	
@@ -34,7 +37,10 @@ public class Game extends JPanel{
 	
 	public Game(Screen frame)
 	{
-		JButton button = new JButton("menu");
+		JButton menu = addAButton("menu","src/rsrc/button_default/MENU.png");
+        menu.setRolloverIcon(new ImageIcon("src/rsrc/button_highlighted/MENU.png"));
+        menu.setPressedIcon(new ImageIcon("src/rsrc/button_pressed/MENU.png"));
+        
 		addMouseListener(new MouseHandler());
 		
 		bound = frame.getBounds();
@@ -43,13 +49,12 @@ public class Game extends JPanel{
 		
 		tile.setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
-        gbc.anchor = GridBagConstraints.PAGE_END;
         gbc.weighty = 0.1;
-        
-        tile.add(button, gbc);
-        button.addActionListener(new ButtonHandler());
+        gbc.insets = new Insets(630, 0, 0, 0);
+  
+        tile.add(menu, gbc);
+        menu.addActionListener(new ButtonHandler());
 		setLayout(new CardLayout());
-		
 		
 		initGame();
 	}
@@ -100,7 +105,6 @@ public class Game extends JPanel{
 			if(e.getButton() == MouseEvent.BUTTON1) {
 				if(tile.getWinner() == 0)
 				{
-					//System.out.println("thay");
 					tile.mouseClicked(e);
 					if(tile.getWinner() != 0)
 					{
@@ -115,13 +119,25 @@ public class Game extends JPanel{
 		}
 	}
 	
+	private JButton addAButton (String name,String url) {
+		JButton button = new JButton(new ImageIcon(url));
+		
+		button.setBorderPainted(false);
+		button.setContentAreaFilled(false);
+		button.setActionCommand(name);
+		
+		ButtonHandler buttoh = new ButtonHandler();
+		button.addActionListener(buttoh);
+		
+		return button;
+	}
+	
 	private class ButtonHandler implements ActionListener 
 	   {
 	      // handle button event
 	      @Override
 	      public void actionPerformed(ActionEvent event)
 	      {
-	         System.out.println("go to menu");
 	         f.layout.show(f.panel, "menu");
 	      }
 	   } 
