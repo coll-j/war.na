@@ -38,7 +38,7 @@ public class Screen extends JFrame{
 
 		SwingUtilities.updateComponentTreeUI(this);
 		
-//		addKeyListener(new KeyHandler());
+		addKeyListener(new KeyHandler());
 		setFocusable(true);
 	}
 	
