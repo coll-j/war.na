@@ -11,6 +11,7 @@ public class Screen extends JFrame{
 	ImageIcon icon = new ImageIcon("src/rsrc/icon_31.png");
 	Game game;
 	Menu menu;
+	HowToPlay howto;
 	JPanel panel = new JPanel();
 	CardLayout layout = new CardLayout();
 	
@@ -30,6 +31,9 @@ public class Screen extends JFrame{
 		
 		game = new Game(this);
 		panel.add(game, "game");
+		
+		howto = new HowToPlay(this);
+		panel.add(howto, "howto");
 		
 		layout.show(panel, "menu");
 		add(panel);

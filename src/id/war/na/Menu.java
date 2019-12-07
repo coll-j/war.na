@@ -111,6 +111,7 @@ public class Menu extends JPanel {
 	         }
 	         else if(action.equals("howtoplay")) {
 	        	 System.out.println("howto");
+	        	 f.layout.show(f.panel, "howto");
 	         }
 	      }
 	   } 
