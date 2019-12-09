@@ -23,8 +23,8 @@ public class Tile extends JPanel{
 	private static final Color GREEN1 = new Color(194, 255, 181);
 	private static final Color BLACK1 = new Color(70, 70, 70);
 	
-	Font Bebas = new Font("Bebas", Font.PLAIN, 40);
-	Font BebasTitle = new Font("Bebas", Font.PLAIN, 70);
+	Font Bebas;
+	Font BebasTitle;
 	
 	private Color[][] well;
 	private ArrayList<Color> wheel = new ArrayList<Color>();
@@ -67,6 +67,9 @@ public class Tile extends JPanel{
 		wheelY = (int) 490 * window_h / 600;
 		
 		well = new Color[10][10];
+		
+		Bebas = new Font("Bebas", Font.PLAIN, 40);
+		BebasTitle = new Font("Bebas", Font.PLAIN, 70);
 	}
 	
 	public void init() {
