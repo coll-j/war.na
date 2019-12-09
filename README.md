@@ -28,8 +28,4 @@
 > This game was created in order to complete 
 > Object Oriented Programming Final Project assignment
 
-## How to play:
-1. There are 5 different colors in the game (Blue, Green, Red, Yellow, Magenta)
-2. Each player will be given a different random color as their target
-3. The goal is to turn all the tiles into the same color as the target
-4. The first player to match all the tiles to their target wins
+Run Main.java to play
