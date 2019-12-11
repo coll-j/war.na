@@ -102,11 +102,9 @@ public class Menu extends JPanel {
 	        	 f.layout.show(f.panel, "game");
 	         }
 	         else if(action.equals("quit")) {
-	        	 System.out.println("quit");
 	        	 System.exit(1);
 	         }
 	         else if(action.equals("howtoplay")) {
-	        	 System.out.println("howto");
 	        	 f.layout.show(f.panel, "howto");
 	         }
 	      }

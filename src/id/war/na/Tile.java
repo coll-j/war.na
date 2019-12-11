@@ -149,11 +149,12 @@ public class Tile extends JPanel{
 	    else whose = 1;
 	    
 	    // whose turn now
-		drawCenteredString("Player   " + "     " + "   turn", window_w, window_h + wheelY - 7*box_size, g, Bebas, BLACK1);
-		drawCenteredString(" " + whose + " ", window_w + box_size, window_h + wheelY - 7*box_size, g, Bebas, BLACK1);
-		
+		//drawCenteredString("Player   " + "" + "   turn", window_w, window_h + wheelY - 7*box_size, g, Bebas, BLACK1);
+		//drawCenteredString(" " + whose + " ", window_w + box_size, window_h + wheelY - 7*box_size, g, Bebas, BLACK1);
+		drawCenteredString("Player " + whose + " turn", window_w, window_h + wheelY - 7*box_size, g, Bebas, BLACK1);
+
 		// player 1 components
-		drawCenteredString("Player   1", mainX, window_h/2 - 2*box_size, g, BebasTitle, BLACK1);
+		drawCenteredString("Player 1", mainX, window_h/2 - 2*box_size, g, BebasTitle, BLACK1);
 		drawCenteredString("target", mainX, window_h/2 + 3*box_size, g, Bebas, BLACK1);
 		drawCenteredString("tile count", mainX, window_h/2 + 10*box_size, g, Bebas, BLACK1);
 		
@@ -169,7 +170,7 @@ public class Tile extends JPanel{
 		drawCenteredString(" " + p1count, mainX, window_h/2 + 13*box_size, g, Bebas, CREAM1);
 		
 		// player 2 components
-		drawCenteredString("Player   2", window_w + 2*mainX - 2*box_size, window_h/2 - 2*box_size, g, BebasTitle, BLACK1);
+		drawCenteredString("Player 2", window_w + 2*mainX - 2*box_size, window_h/2 - 2*box_size, g, BebasTitle, BLACK1);
 		drawCenteredString("target", window_w + 2*mainX - 2*box_size, window_h/2 + 3*box_size, g, Bebas, BLACK1);
 		drawCenteredString("tile count", window_w + 2*mainX - 2*box_size, window_h/2 + 10*box_size, g, Bebas, BLACK1);
 		

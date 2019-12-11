@@ -47,18 +47,18 @@ public class HowToPlay extends JPanel {
 		menu.setRolloverIcon(new ImageIcon("src/rsrc/button_highlighted/menu.png"));
 		menu.setPressedIcon(new ImageIcon("src/rsrc/button_pressed/menu.png"));
 		
-		gbc.insets = new Insets(15, 0, 0, -1410);
+		gbc.insets = new Insets(r.height * 5/256, 0, 0, r.width* -705/683);
 		gbc.gridy = 1;
 		gbc.gridx = 1;
 		bg.add(right, gbc);
 		
-		gbc.insets = new Insets(15, -1250, 0, 0);
+		gbc.insets = new Insets(r.height * 5/256, r.width * -625/683, 0, 0);
 		gbc.gridy = 1;
 		gbc.gridx = 2;
 		bg.add(left, gbc);
 		
 		gbc.anchor = GridBagConstraints.PAGE_END;
-		gbc.insets = new Insets(700, 0, 0, 0);
+		gbc.insets = new Insets(r.height*10/11, 0, 0, 0);
 		bg.add(menu,gbc);
 		
 		add(bg);

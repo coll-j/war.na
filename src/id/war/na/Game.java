@@ -50,7 +50,7 @@ public class Game extends JPanel{
 		tile.setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
         gbc.weighty = 0.1;
-        gbc.insets = new Insets(630, 0, 0, 0);
+        gbc.insets = new Insets(bound.height*7/8, 0, 0, 0);
   
         tile.add(menu, gbc);
         menu.addActionListener(new ButtonHandler());
