@@ -89,7 +89,6 @@ public class Tile extends JPanel{
 		p2 = color_lib[r.nextInt(color_lib.length)];
 		while(p2.equals(p1))
 			p2 = color_lib[r.nextInt(color_lib.length)];
-		System.out.println(p1 + " " + p2);
 		
 		turn = 1;
 		
@@ -149,15 +148,8 @@ public class Tile extends JPanel{
 	    else whose = 1;
 	    
 	    // whose turn now
-<<<<<<< HEAD
-		//drawCenteredString("Player   " + "" + "   turn", window_w, window_h + wheelY - 7*box_size, g, Bebas, BLACK1);
-		//drawCenteredString(" " + whose + " ", window_w + box_size, window_h + wheelY - 7*box_size, g, Bebas, BLACK1);
-		drawCenteredString("Player " + whose + " turn", window_w, window_h + wheelY - 7*box_size, g, Bebas, BLACK1);
-
-=======
 		drawCenteredString("Player " + whose + " turn", window_w, window_h + wheelY - 7*box_size, g, Bebas, BLACK1);
 		
->>>>>>> 27eba11fc084221e6aeb636a673b98fd34fcb695
 		// player 1 components
 		drawCenteredString("Player 1", mainX, window_h/2 - 2*box_size, g, BebasTitle, BLACK1);
 		drawCenteredString("target", mainX, window_h/2 + 3*box_size, g, Bebas, BLACK1);
