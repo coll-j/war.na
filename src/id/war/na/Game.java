@@ -46,6 +46,7 @@ public class Game extends JPanel{
 		bound = frame.getBounds();
 		f = frame;
 		tile = new Tile(bound);
+		System.out.println("bound" + bound);
 		
 		tile.setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
